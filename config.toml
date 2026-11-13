@@ -1,0 +1,12 @@
+# Built-in Streamlit theme settings (no CSS/HTML/JavaScript is used anywhere).
+[theme]
+base = "light"
+primaryColor = "#1A9E9E"
+backgroundColor = "#FFFBF0"
+secondaryBackgroundColor = "#E8F4FA"
+textColor = "#1F3B4D"
+font = "sans serif"
+
+# Optional (see README): to use a dyslexia-friendly font such as OpenDyslexic,
+# download its .ttf file into a "static" folder, enable static file serving
+# under [server], and describe the font here with [[theme.fontFaces]].

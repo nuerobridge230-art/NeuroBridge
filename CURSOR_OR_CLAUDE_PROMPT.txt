@@ -1,0 +1,333 @@
+NEUROBRIDGE — CLAUDE BUILD PROMPT
+STRICT PYTHON-ONLY CLASS 12 PROJECT
+
+You are helping me finish my Class 12 Artificial Intelligence project, NeuroBridge. Cursor reached its usage limit, so I am continuing with Claude. Build the application carefully and completely, using beginner-friendly Python only.
+
+IMPORTANT: READ AND FOLLOW EVERY RULE BELOW.
+
+============================================================
+1. ABSOLUTE TECHNICAL RULES — PYTHON ONLY
+============================================================
+
+- Use Python for all application code.
+- Use Streamlit as the app framework because it lets me build an interactive app using Python.
+- Do NOT write HTML, CSS, JavaScript, TypeScript, React, Vue, Angular, Node.js, PHP, or any other frontend/backend language.
+- Do NOT use st.html, unsafe_allow_html, custom HTML strings, CSS injection, JavaScript snippets, or browser scripts.
+- Do NOT create separate HTML, CSS, or JS files.
+- Do NOT use JavaScript for speech, animations, or any feature.
+- Use Streamlit's built-in widgets, layouts, themes, session state, and charts only.
+- Keep the code simple enough for a Class 12 student who is learning Python to understand and explain to a teacher.
+- Prefer Python standard-library modules and Streamlit. Use pandas only if genuinely useful. Use Streamlit's built-in charts for graphs instead of adding a complex charting library.
+- Use local Python dictionaries/lists for stories, vocabulary, quiz questions, and game content.
+- Save progress to a local JSON file using Python's built-in json module. Handle missing/corrupt files safely.
+- No paid APIs, API keys, external AI services, or database setup.
+- Do not claim that this app uses AI speech recognition or diagnoses dyslexia.
+- If a feature cannot be done reliably under these restrictions, implement the closest honest Python-only alternative and explain the limitation in the README. Do not break the Python-only rule to imitate a feature.
+
+The app may use Streamlit's normal built-in display and interaction capabilities. Do not manually author browser code.
+
+============================================================
+2. PROJECT PURPOSE AND NAME
+============================================================
+
+App name: NeuroBridge
+Tagline: “Learn at Your Pace. Grow with Confidence.”
+
+Create a child-friendly educational learning-support app for children with dyslexia and other reading difficulties. It should support reading practice, phonological awareness, decoding, vocabulary, reading comprehension, and mathematics.
+
+This is a learning-support prototype, not a diagnostic or treatment tool. Do not make medical claims. Explain that the app complements appropriate teaching and individual learning support.
+
+============================================================
+3. EXACTLY FOUR MAIN PAGES
+============================================================
+
+The app must have exactly these four main destinations, using Streamlit's sidebar navigation or a simple navigation control:
+
+1. Home / Student Dashboard
+2. Reading Practice
+3. Quizzes & Games
+4. Parent/Teacher Dashboard
+
+Do not add more pages or routes. Stories, quiz questions, and individual games must open as sections within their existing page. Keep navigation clear and reliable.
+
+============================================================
+4. PAGE 1 — HOME / STUDENT DASHBOARD
+============================================================
+
+A. Demo login
+- Show the NeuroBridge name and tagline.
+- Give a short explanation of the app.
+- Include fields for student name or username, email, and password where practical.
+- Include a working “Continue in Demo Mode” or demo login button so the app can be used without registration.
+- This is a school prototype. Do not store or pretend to securely authenticate real passwords. If a password field is shown, label demo access clearly and do not save the password.
+- After demo login, display the student's name. Provide a way to change the displayed student name if simple to implement.
+
+B. Student dashboard
+- Show the student's name and optional age/class.
+- Show one inspirational quote selected randomly from a built-in collection each time the dashboard is opened or refreshed.
+- Display exactly three large cards or clearly separated sections:
+  1. Reading Practice — “Read stories and discover new words.”
+  2. Quizzes — “Practise maths step by step.”
+  3. Games — “Learn through fun activities.”
+- Each card must take the student to the corresponding section within the existing four-page structure.
+- Show a progress summary: stories completed, maths quizzes completed, and games played.
+- Use a warm, polished, child-friendly look with Streamlit's standard layout and widgets. Use built-in theme settings where available; do not add CSS or HTML.
+
+C. Dyslexia-friendly reading preferences
+Provide settings that the student can change:
+- Standard readable font preference versus an optional dyslexia-friendly font preference, if available through the Python/Streamlit environment.
+- Reading background preference: white, cream, or pale blue.
+- Text size: small, medium, or large.
+- Line spacing preference: normal or extra spacing, if it can be applied using supported Streamlit settings.
+- A simple option to emphasise the current paragraph or selected word where feasible.
+
+IMPORTANT LIMITATION: Because the app must contain no custom CSS, HTML, or JavaScript, some font/background/line-spacing changes may not be visually enforceable throughout every Streamlit component. Implement the preferences honestly using supported Python/Streamlit options, and apply them to reading text wherever possible. Never secretly use CSS/HTML/JS. If a preference cannot be applied, explain it clearly in the README and still let the student choose the reading preference.
+
+============================================================
+5. PAGE 2 — READING PRACTICE
+============================================================
+
+A. Six original stories
+Create six complete, original, age-appropriate stories, each with a title, short description, recommended reading level, approximate reading time, and simple illustration cue using emojis or text symbols (do not create image files or use HTML).
+
+Use these story titles:
+1. The Little Bird Who Kept Trying
+2. Mia and the Magical Library
+3. The Mystery of the Missing Map
+4. A Journey Through the Rainforest
+5. The Clever Little Inventor
+6. The Secret of the Starry Night
+
+Organise them into Beginner, Intermediate, and Advanced reading levels. Let the adult/student choose a level. Story content must be included in the project, not left as TODO placeholders.
+
+B. Story reader
+- Selecting a story should display its full text on the Reading Practice page.
+- Use short paragraphs and clear, readable text.
+- Include buttons to choose the previous/next paragraph where feasible.
+- Include a vocabulary helper button or section.
+- Include a button to begin that story's five-question comprehension quiz.
+- Include a “Read by Myself” option and a “Listen and Read” option.
+- Allow the student to replay a sentence or paragraph aloud if text-to-speech works in the environment.
+- Provide a reliable fallback if speech output is unavailable.
+
+C. Speech requirement under Python-only restriction
+- Do NOT use browser speech synthesis, JavaScript, HTML audio controls authored by hand, or speech-recognition APIs.
+- If feasible, implement optional offline text-to-speech with a Python package such as pyttsx3, save the spoken text to a temporary audio file using Python, and play the file through Streamlit's supported st.audio feature.
+- Check for package/OS limitations and handle errors gracefully. Do not make the whole app crash if speech is unavailable.
+- If text-to-speech is too unreliable in the target environment, show the story clearly and provide a simple sentence-by-sentence reading practice mode instead.
+- Do not claim to record, identify, score, or correct skipped/misspelled/mispronounced words. No microphone or speech-analysis feature is required.
+
+D. Vocabulary builder
+For each story, include several selected difficult words in a Python dictionary.
+When a word is chosen, show:
+- The word.
+- A simple meaning.
+- A short example sentence.
+- An emoji or text-based visual association where useful.
+- An optional audio pronunciation using the same Python-only TTS approach if available.
+
+Example:
+Word: Enormous
+Meaning: Very big.
+Example: “The enormous elephant walked slowly.”
+
+Do not require an external dictionary or AI API.
+
+E. Reading comprehension
+- Include exactly five multiple-choice questions per story:
+  - Three questions about story facts/events.
+  - One vocabulary question.
+  - One simple inference question.
+- Use clear language and large, easy-to-select answer options.
+- After the student submits an answer, show whether it is correct and explain the answer in simple language.
+- Let the student retry questions.
+- At the end, show the score and an encouraging message.
+- Save completed attempt details and score to the local JSON progress file.
+- Do not mark a story as completed until the student completes its comprehension activity or explicitly finishes the activity.
+
+============================================================
+6. PAGE 3 — QUIZZES & GAMES
+============================================================
+
+Create two clearly separated sections within this same page: Maths Quizzes and Reading Games.
+
+A. Maths quizzes
+Allow the student to select:
+- School class or level.
+- Topic.
+- Difficulty: Easy, Medium, or Challenging.
+
+Include these topics:
+- Counting and number recognition.
+- Addition and subtraction.
+- Multiplication and division.
+- Fractions.
+- Shapes and patterns.
+- Simple word problems.
+
+Each quiz has five questions. Build an editable, predefined question bank in Python dictionaries/lists organised by topic and difficulty. Include usable questions for every topic and difficulty; do not leave TODOs.
+
+Every question should have:
+- Clear wording.
+- Multiple-choice answer buttons or a Streamlit selection control.
+- Visual support using simple emojis/text where appropriate.
+- Immediate correctness feedback.
+- A step-by-step explanation of the correct answer.
+- A retry option.
+
+Example:
+Question: “You have 5 apples and receive 2 more. How many apples do you have?”
+Explanation: “Start with 5 and count 2 more. The answer is 7.”
+
+Record the topic, difficulty, date/time, score, and number of questions in the local progress file. Use Python's datetime module.
+
+B. Four interactive reading games
+Build all four games as functional Streamlit interactions, using session state to track choices and progress:
+
+1. Letter–Sound Match
+   - Match a letter with its corresponding sound or a simple word that begins with it.
+   - Skill: letter–sound correspondence.
+
+2. Build the Word
+   - Present shuffled letters and let the student select/arrange them to form the target word. Use a simple reliable Python interaction; do not use JavaScript drag-and-drop.
+   - Skill: spelling and decoding.
+
+3. Word–Picture Match
+   - Match a word with an emoji representing the object, such as “apple” with 🍎.
+   - Skill: word recognition and vocabulary.
+
+4. Put the Story in Order
+   - Show three or four short events and ask the student to choose their correct order using numbered select boxes or another simple Streamlit control.
+   - Skill: comprehension and sequencing.
+
+Every game must include:
+- Short instructions.
+- One practice example where possible.
+- Several playable rounds, not just a static example.
+- Immediate feedback.
+- A completion score.
+- A “Play Again” option.
+- Saving completed game activity to the local progress file.
+
+Avoid timers, flashing effects, public leaderboards, and unnecessary competition.
+
+============================================================
+7. PAGE 4 — PARENT/TEACHER DASHBOARD
+============================================================
+
+Create a clearly labelled demonstration dashboard for a parent/teacher to review the student's recorded activity. Do not imply that the demo login is secure authentication.
+
+A. Overview cards / metrics
+Calculate these from the saved progress data:
+- Number of stories completed.
+- Average reading comprehension score.
+- Number of maths quizzes completed.
+- Average maths quiz score.
+- Number of reading games completed.
+
+B. Three graphs
+Use Streamlit's built-in charting functions (for example, st.line_chart and st.bar_chart). Do not add JavaScript chart libraries, Plotly, custom HTML, or CSS.
+
+1. Reading Comprehension Progress — line chart of scores across completed story attempts.
+2. Mathematics Progress — line chart of scores across completed maths quizzes.
+3. Learning Activities — bar chart comparing counts of completed reading sessions, maths quizzes, and games.
+
+Each chart must have a title, readable labels where supported, and a brief plain-language explanation. If no activities have been completed, show a friendly empty-state message instead of crashing.
+
+C. Recent activity
+Show a list/table of recent activity, including activity type, story/topic/game, score where relevant, and date/time.
+
+D. Learning suggestions
+Use simple Python if/elif rules based on saved scores, not complex AI. Examples:
+- If reading comprehension scores are repeatedly low, suggest practising shorter stories and reviewing story events.
+- If a maths topic score is low, suggest another quiz on that topic with worked examples.
+- If few activities have been completed, suggest a short, regular practice session.
+- If scores improve, provide encouraging feedback.
+
+These are general learning suggestions, not diagnoses or clinical assessments.
+
+E. Optional date filter
+If straightforward, add a simple date-range filter using Streamlit's built-in controls. Do not compromise core features to add this.
+
+============================================================
+8. EDUCATIONAL PRINCIPLES
+============================================================
+
+Use evidence-informed principles to guide the activities:
+- Phonological awareness.
+- Explicit letter–sound correspondence.
+- Decoding and spelling practice.
+- Repeated reading.
+- Vocabulary instruction using definitions and examples.
+- Reading comprehension through story questions and simple inferences.
+- Immediate feedback and retry opportunities.
+- Short, manageable practice sessions and opportunities to review.
+
+Do not claim that a font or game alone treats dyslexia. The app complements appropriate teaching and learning support.
+
+============================================================
+9. DESIGN AND ACCESSIBILITY
+============================================================
+
+- Warm, modern, uncluttered, encouraging, and child-friendly.
+- Prefer soft blue, teal, warm cream, pale yellow, and white through Streamlit's supported theme settings.
+- Use Streamlit columns, containers, tabs, expanders, buttons, and other built-in widgets.
+- Use large, clear labels and simple instructions.
+- Use emoji as simple visual cues and illustrations.
+- Keep layouts usable on desktop, tablet, and mobile.
+- No ads, flashing animations, public rankings, or unnecessary visual effects.
+- No custom HTML, CSS, JavaScript, or external frontend files.
+
+============================================================
+10. LOCAL DATA AND RELIABILITY
+============================================================
+
+- Store story text, vocabulary, comprehension questions, maths questions, and game content in clear Python data structures.
+- Store progress in a local JSON file named neurobridge_progress.json in the project folder.
+- Create the file automatically if it does not exist.
+- Handle invalid/missing JSON safely and display a friendly message rather than crashing.
+- Use Streamlit session state to preserve quiz answers and game progress during interaction.
+- Avoid duplicate activity records caused by normal reruns; only save an activity when a quiz/game is actually completed or the user explicitly records completion.
+- Use readable functions and meaningful variable names.
+- Keep all core logic in app.py unless separating simple Python data into another .py file clearly improves readability. Never create HTML/CSS/JS files.
+- Do not hard-code fake progress as if it were real. If demo sample data is provided, label it clearly as sample data.
+- Include error handling for optional speech output and local file access.
+
+============================================================
+11. REQUIRED PROJECT FILES AND DOCUMENTATION
+============================================================
+
+Create:
+1. app.py — complete working Streamlit application.
+2. requirements.txt — only necessary Python packages.
+3. README.md — beginner-friendly setup, run instructions, feature overview, limitations, and how the code works.
+4. CURSOR_OR_CLAUDE_PROMPT.txt — a copy of this prompt if practical.
+
+Do not leave TODO placeholders, dead buttons, empty stories, incomplete games, or graphs that do not use actual recorded data.
+
+Before finishing:
+- Review all the code for syntax errors and logical issues.
+- Make sure the app can launch with `streamlit run app.py`.
+- Test the navigation, demo login, all six stories, vocabulary helper, all 30 story-comprehension questions, maths quiz topics/difficulties, all four games, progress saving, and dashboard empty states.
+- Check that rerunning the app does not accidentally submit the same completed activity more than once.
+- Keep the requirements minimal.
+- If you cannot run the app in your environment, say so honestly and provide the exact test commands instead of claiming it was tested.
+
+============================================================
+12. HOW CLAUDE SHOULD WORK
+============================================================
+
+First inspect any existing project files I provide. If app.py or other project files already exist, preserve and improve them instead of unnecessarily rebuilding everything. Keep all already-working features unless they violate the strict Python-only requirements.
+
+Then:
+1. Briefly state the files you found and your plan.
+2. Implement the application in the available workspace, not merely describe code or give partial snippets.
+3. Build the core features first, then the optional features.
+4. Run a Python syntax check and fix all errors.
+5. Explain exactly how to install requirements and launch the app.
+6. Give me a short, simple explanation of the Python concepts used so I can explain the project to my Class 12 teacher.
+
+If you cannot access or edit files in your environment, tell me clearly and provide the complete contents of each file in separate, clearly named code blocks. Do not pretend to have created files that you did not create.
+
+FINAL PRIORITY:
+A complete, understandable, working Python-only Streamlit prototype is more important than fancy effects. Preserve all four main pages, the three dashboard cards, all six stories, vocabulary help, five comprehension questions per story, maths quizzes, all four games, progress storage, and parent/teacher graphs. Never use HTML, CSS, JavaScript, React, or other languages.

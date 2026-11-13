@@ -1,0 +1,43 @@
+{
+  "activities": [
+    {
+      "type": "story",
+      "name": "Mia and the Magical Library",
+      "score": 1,
+      "total": 5,
+      "timestamp": "2026-10-27 12:05:02",
+      "level": "Beginner"
+    },
+    {
+      "type": "story",
+      "name": "Mia and the Magical Library",
+      "score": 3,
+      "total": 5,
+      "timestamp": "2026-11-13 12:06:40",
+      "level": "Beginner"
+    },
+    {
+      "type": "maths",
+      "name": "Shapes and patterns",
+      "score": 2,
+      "total": 5,
+      "timestamp": "2026-11-13 12:10:27",
+      "difficulty": "Challenging",
+      "class_level": "Class 5-6"
+    },
+    {
+      "type": "game",
+      "name": "Word–Picture Match",
+      "score": 5,
+      "total": 5,
+      "timestamp": "2026-11-13 12:11:49"
+    },
+    {
+      "type": "game",
+      "name": "Build the Word",
+      "score": 5,
+      "total": 5,
+      "timestamp": "2026-11-13 12:12:54"
+    }
+  ]
+}
