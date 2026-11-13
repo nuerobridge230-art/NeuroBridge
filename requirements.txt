@@ -1,3 +1,0 @@
-streamlit>=1.50
-# Optional: offline text-to-speech ("Listen and Read"). The app works without it.
-pyttsx3>=2.90
